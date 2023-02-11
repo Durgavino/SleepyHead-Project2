@@ -5,4 +5,8 @@ router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
+
+router.get('/chart',async(req,res)=>{
+  res.render('chart');
+})
 module.exports = router;
