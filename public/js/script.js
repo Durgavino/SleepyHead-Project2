@@ -9,7 +9,7 @@ let linegraph= new Chart(graph,{
             lineTension:0.5,
             backgroundColor:"rgba(30, 39, 46,1.0)",
             borderColor:"rgba(87, 75, 144,1.0)",
-            fill:false,
+           // fill:false,
             // backgroundColor:"rgba(0,0,255,1.0)",
             // borderColor:"rgba(0,0,255,0.1)",
             data:[1,8,6,2,1]
