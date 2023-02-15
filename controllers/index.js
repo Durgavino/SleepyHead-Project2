@@ -4,6 +4,7 @@ const chartRoutes=require('./chartRoutes');
 const userRoutes=require('./userRoutes');
 const dataRoutes=require('./dataRoutes');
 
+
 router.use('/', homeRoutes); //http://localhost:3001/
 
 router.use('/chart',chartRoutes); //http:localhost:3001/chart

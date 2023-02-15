@@ -9,6 +9,17 @@ const db=mysql.createConnection({
 console.log(`Connected to SleepyHead Database`)
 );
 
+//New User
+
+router.get('/register',async(req,res) =>{
+  const params=[req.body.email,req.body.password]
+})
+
+
+
+
+
+
 router.get('/data', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
   res.render('data');
@@ -35,7 +46,7 @@ router.post('/postdata',(req,res)=>{
 
 router.get('/getdata',(req,res)=>{
   const sql=`
-  select id,BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation`;
+  select id,BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation limit 5`;
 
   db.query(sql,(err,rows)=>{
     // if(err){
@@ -47,7 +58,7 @@ router.get('/getdata',(req,res)=>{
     //   message:'Success',
     //   data:rows
     
-    //});
+    // });
     if(!err){
       res.render("user",{rows});
     }
