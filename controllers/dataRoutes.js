@@ -1,5 +1,9 @@
 const router = require('express').Router();
 const mysql = require('mysql2');
+const bodyParser = require('body-parser');
+
+router.use(bodyParser.json());
+
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -12,23 +16,25 @@ const db = mysql.createConnection({
 //create new user
 
 router.post('/register', async (req, res) => {
+  console.log(req.body);
   var fname = req.body.fname;
-  var lname = req.body.lanme;
+  var lname = req.body.lname;
   var cpass = req.body.cpass;
   const params = [fname, lname, cpass];
-  const sql = `INSERT INTO userDetails(UserName, UserPassword, EmailId) values (?,?,?)`;
+  const sql = `INSERT INTO userDetails(UserName, EmailId,UserPassword) values (?,?,?)`;
   db.query(sql, params, (err, result) => {
     if (err)
       throw err;
     else {
       res.json({ message: 'Thanks for Signig Up' ,
     data:req.body})
+    
     }
   });
 });
 
 
-//Login
+// //Login
 
 router.post('/login', async (req, res) => {
   var fname = req.body.fname;
@@ -41,7 +47,7 @@ router.post('/login', async (req, res) => {
       res.redirect('/login');
     }
     else {
-      
+
       res.render('/data');
     }
   })
@@ -63,10 +69,13 @@ router.get('/data', async (req, res) => {
 
 router.post('/postdata', (req, res) => {
   console.log(req.body);
-  const params = [req.body.BedTime, req.body.wakeUpTime];
-  // const BedTime=req.body.BedTime;
-  // const wakeUpTime=req.body.wakeUpTime;
-  const sql = `INSERT INTO Usersleepinfomation(BedTime,wakeUpTime) VALUES(?,?)`;
+  // const params = [req.body.BTime, req.body.WTime];
+  // // const BedTime=req.body.BedTime;
+  // // const wakeUpTime=req.body.wakeUpTime;
+  const BedTime=req.body.BTime;
+  const wakeUpTime=req.body.WTime;
+  const params=[BedTime,wakeUpTime];
+  const sql = `INSERT INTO Usersleepinfomation(BedTime,wakeUpTime) VALUES(?,?) `;
 
   db.query(sql, params, (err, result) => {
     if (err) {
@@ -82,7 +91,7 @@ router.post('/postdata', (req, res) => {
 
 router.get('/getdata', (req, res) => {
   const sql = `
-  select id,BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation limit 5`;
+  select id,BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation `;
 
   db.query(sql, (err, rows) => {
     // if(err){
@@ -93,10 +102,10 @@ router.get('/getdata', (req, res) => {
     // res.json({
     //   message:'Success',
     //   data:rows
-
-    // });
+    // })
+    
     if (!err) {
-      res.render("user", { rows });
+      res.render("userResult", { rows });
     }
     else {
       throw err;
