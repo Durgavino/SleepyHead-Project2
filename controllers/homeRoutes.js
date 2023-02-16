@@ -23,12 +23,12 @@ router.get('/register', async (req, res) => {
 
 router.get('/userinput', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('data');
+  res.render('userdata');
 });
 
-router.get('/data/getdata', async (req, res) => {
+router.get('/userresult', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('user');
+  res.render('userResult');
 });
 
 
