@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{! Added Bulma }}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Sleepyhead</title>
+  </head>
+  <body>
+    <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-1">
+      <h1>
+      Sleepyhead! 
+      </h1>
+      <img class="logo" src="/css/logo.png" alt="logo">
+    </header>
+
+      <main class="container container-fluid mt-5">
+        {{{ body }}}
+      </main>
+  </div>
+  </body>
+</html>

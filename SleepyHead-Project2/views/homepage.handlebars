@@ -1,0 +1,48 @@
+{{! From Bulma, to be modded and replaced on release }}
+{{! TODO: Add GH links, funding links }}
+
+<section class="hero has-background-grey-lightery is-fullheight">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item" href="login">Login{{login.handlebars}}</a>
+            
+              {{!-- <a class="navbar-item" href={{login.handlebars}}login </a> --}}
+            {{!-- <a class="navbar-item" href="{{login.handlebars}}">{{login.handlebars}}login </a> --}}
+            <a class="navbar-item" href="Register">Register{{register.handlebars}}</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        sleepyhead
+      </p>
+      <p class="subtitle">
+        Welcome to Sleepyhead 
+      </p>
+    </div>
+  </div>
+
+  <!-- Hero footer: will stick at the bottom -->
+  {{!-- <div class="footer">
+        <p>... way to checkmate your sleeping attitude!</p>
+  </div> --}}
+</section>

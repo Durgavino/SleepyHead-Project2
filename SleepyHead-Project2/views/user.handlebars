@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Information</title>
+</head>
+<h2>The user information is display here</h2>
+<body>
+    <div id="sleepdata">
+        {{#each rows as |row|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>Bed Time {{row.BedTime}}</h4>
+        <h4>WakeUp Time {{row.wakeUpTime}}</h4>
+        <h4>Sleep Duration {{row.Sleepdurtion}}</h4>
+      </div>
+      {{!-- <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div> --}}
+    </div>
+    {{/each}}
+    </div>
+    <script src="/project-2-starter-template/public/js/data.js"></script>
+</body>
+</html>
