@@ -3,6 +3,7 @@ const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 
 router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended:true}));
 
 const db = mysql.createConnection({
   host: 'localhost',
@@ -64,7 +65,7 @@ router.get('/data', async (req, res) => {
   res.render('data');
 });
 
-router.post('/postdata', (req, res) => {
+router.post('/userinput', (req, res) => {
   console.log(req.body);
    const BedTime=req.body.BTime;
   const wakeUpTime=req.body.WTime;
@@ -76,10 +77,13 @@ router.post('/postdata', (req, res) => {
       res.status(400).json({ error: err.message });
       return;
     }
-    res.json({
-      message: 'Success',
-      data: req.body
-    });
+    // res.json({
+    //   message: 'Sleep Information is added on your account',
+    //   //data: req.body
+    // });
+    else{
+      res.send("Sleep Infomation is added on your account");
+    }
   });
 });
 
