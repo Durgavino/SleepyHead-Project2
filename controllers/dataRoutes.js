@@ -54,13 +54,10 @@ router.post('/login', async (req, res) => {
 
 });
 
-
-
 //logout
 // route.post('/logout', async (req, res) => {
 //   if (req.body)
 // })
-
 
 router.get('/data', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
@@ -69,10 +66,7 @@ router.get('/data', async (req, res) => {
 
 router.post('/postdata', (req, res) => {
   console.log(req.body);
-  // const params = [req.body.BTime, req.body.WTime];
-  // // const BedTime=req.body.BedTime;
-  // // const wakeUpTime=req.body.wakeUpTime;
-  const BedTime=req.body.BTime;
+   const BedTime=req.body.BTime;
   const wakeUpTime=req.body.WTime;
   const params=[BedTime,wakeUpTime];
   const sql = `INSERT INTO Usersleepinfomation(BedTime,wakeUpTime) VALUES(?,?) `;

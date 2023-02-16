@@ -40,3 +40,26 @@ document.location.replace("/login");
 }).catch(err => console.log(err))
 
 })
+
+
+
+const userinput=document.querySelector("#userinput");
+userinput.addEventListener("submit",function(e){
+    e.preventDefault()
+
+    const BTime=document.querySelector("BTime");
+    const WTime=document.querySelector("WTime");
+    console.log(BTime,WTime);
+    fetch('/data/postdata',{
+        method:"POST",
+        body:JSON.stringify({
+            BTime:BTime.value,
+            WTime:WTime.value,
+        }),
+        headers:{"Content-Type": "application/json" }
+    })
+    .then(res=>{
+        
+    })
+    .catch(err=>console.log(err))
+})
