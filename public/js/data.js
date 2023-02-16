@@ -16,6 +16,7 @@ fetch('/data/getdata').then(res=>{
 getdata();
 
 
+
 const registerform=document.querySelector("#register");
 registerform.addEventListener("submit",function(e){
     e.preventDefault()

@@ -41,24 +41,26 @@ router.post('/login', async (req, res) => {
   var fname = req.body.fname;
   var lname = req.body.lname;
   const params = [fname, lname];
-  const sql = `Select id from userDetails where EmailId =? and UserPassword=?`;
+  const sql = `Select user_id from userDetails where EmailId =? and UserPassword=?`;
   db.query(sql, params, (err, rows) => {
     if (err) {
+      console.log(err);
       res.send('Incorrect Email and Password');
       res.redirect('/login');
     }
     else {
 
-      res.render('/data');
+      res.render('userdata');
     }
   })
 
 });
 
 //logout
-// route.post('/logout', async (req, res) => {
-//   if (req.body)
-// })
+router.post('/logout', async (req, res) => {
+req.body.destroy();
+res.redirect("index");
+});
 
 router.get('/data', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
@@ -88,8 +90,11 @@ router.post('/userinput', (req, res) => {
 });
 
 router.get('/getdata', (req, res) => {
-  const sql = `
-  select id,BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation `;
+  // // const sql = `
+  // select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation `;
+
+  const sql=`
+  select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation order by id limit 5`;
 
   db.query(sql, (err, rows) => {
     // if(err){
