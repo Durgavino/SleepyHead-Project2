@@ -1,18 +1,25 @@
 const router = require('express').Router();
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
+let db;
+if(process.env.JAWSDB_URL){
+  db = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+  db = mysql.createConnection({
+    host: 'localhost',
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+  },
+    console.log(`Connected to SleepyHead Database`)
+  );
+}
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'bootcamp',
-  database: 'sleepyhead_db'
-},
-  console.log(`Connected to SleepyHead Database`)
-);
+
 
 //create new user
 
