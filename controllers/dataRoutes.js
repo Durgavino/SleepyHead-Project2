@@ -8,7 +8,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'bootcamp',
+  password: 'root',
   database: 'sleepyhead_db'
 },
   console.log(`Connected to SleepyHead Database`)
