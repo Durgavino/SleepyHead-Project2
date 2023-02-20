@@ -132,8 +132,9 @@ router.get('/api/getdata', (req, res) => {
   // // const sql = `
   // select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation `;
 
-  const sql=`
-  select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation`;
+  // const sql=`
+  // select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation`;
+const sql=`select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation order by id asc limit 5`;
 
   db.query(sql, (err, rows) => {
     // if(err){
