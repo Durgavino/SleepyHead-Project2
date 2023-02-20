@@ -15,6 +15,7 @@ app.use(express.static("public"));
 //Look at /controllers folder
 app.use("/", routes);
 
+
 //TODO: Uncomment to make use of database, once set up
 // sequelize.sync({force: false}).then(()=>{
 //     app.listen(PORT, () => {

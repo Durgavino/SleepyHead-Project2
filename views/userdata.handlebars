@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,4 +22,21 @@ Welcome to Sleepyhead
       </form>
       
 </body>
-</html>
+</html> --}}
+
+
+<section class="hero">
+<h2>Enter Sleep Time</h2>
+<br>
+ <form id="userdata" action="/data/userinput" id="userinput" method="POST">
+       
+        <label for="lname">Bed Time:</label><br>
+        <input type="text" id="BTime" name="BTime" value=""><br>
+
+        <label for="fname"> <br> Wake up Time:</label><br>
+        <input type="text" id="WTime" name="WTime" value=""><br><br>
+        
+        <input type="submit" value="Submit"><br><br>
+        <input type="button" id="Submit" onclick=location.href="http://localhost:3001/data/getdata" value="View last 5 days sleep information">
+      </form>
+</section>

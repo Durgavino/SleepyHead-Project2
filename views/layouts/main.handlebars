@@ -1,4 +1,4 @@
-<html lang="en">
+{{!-- <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,6 +12,40 @@
     <title>Coming Soon!</title>
   </head>
   <body>
+    {{{body}}}
+  </body>
+</html> --}}
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>sleepyhead</title>
+  </head>
+  <body>
+    <container class="main-container">
+      <header>
+        <div class="hero-head">
+        <div class="container">
+        <div id="navbarMenuHeroA" class="navbar-menu">
+             <img src="/css/Sleepyhead.png" class="sleepylogo"/>
+          <div class="navbar-end">
+            <a id="color" class="navbar-item is-gold" href="http://localhost:3001">Home{{main.handlebars}}</a>
+            <a id="color" class="navbar-item is-gold" href="login">Login{{login.handlebars}}</a>
+            <a id="color" class="navbar-item is-gold" href="Register">Register{{register.handlebars}}</a>
+          </div>
+        </div>
+       </div>
+      </header>
+    </container>
+
     {{{body}}}
   </body>
 </html>
