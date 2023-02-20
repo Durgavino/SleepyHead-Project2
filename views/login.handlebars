@@ -1,24 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<h2>Welcome to Sleepyhead</h2>
 
-
-<body>
-    <form action="/data/login" method="POST">
+    <section class="hero">
+ 
+<h2>Login Page</h2>
+<br>
+ <form id="login" action="/data/login" method="POST">
         <label for="fname">Email Address:</label><br>
-        <input type="text" id="fname" name="fname" value=""><br>
+        <input class="email" type="text" id="fname" name="fname" value=""><br><br>
         <label for="lname">Password:</label><br>
-        <input type="text" id="lname" name="lname" value=""><br><br>
-        <input type="submit" id="Submit" value="Submit">
+        <input class="password" type="text" id="lname" name="lname" value=""><br><br>
+        <input type="submit" id="Submit" href="http://localhost:3001/userinput" value="Submit">
+        <br> <br>
+<<<<<<< HEAD
+        {{!-- <input type="button" id="Submit" onclick=location.href="http://localhost:3001/data/getdata" value="View last 5 days information"> --}}
+=======
+        <input type="button" id="Submit" onclick=location.href="http://localhost:3001/data/getdata" value="View last 5 days information">
+>>>>>>> 096e6909eeb6df1c0f9b42e8883bf68bd18505b5
+  
       </form> 
 
-</body>
-<script src="/project-2-starter-template/public/js/login.js"></script>
-</html>
 
+</section>

@@ -7,29 +7,30 @@
     <title>Sleep Information</title>
 </head>
 <body>
-    <div id="sleepdata">
+
+ <section class="hero">
+ 
+<h2 style="color: blue; font-size:larger">View last 5 days sleep information:</h2>
+<br>
+ 
+ <div id="sleepdata">
         {{#each rows as |row|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4>Bed Time {{row.BedTime}}</h4>
-        <h4>WakeUp Time {{row.wakeUpTime}}</h4>
-        <h4>Sleep Duration {{row.Sleepdurtion}}</h4>
+        <h4>Bed Time {{row.BedTime}} &nbsp; &nbsp; WakeUp Time {{row.wakeUpTime}} &nbsp; &nbsp; Sleep Duration {{row.Sleepdurtion}}</h4> 
       </div>
-      {{!-- <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div> --}}
     </div>
     {{/each}}
     </div>
+    <br>
+</section>
 
-   
-       <div class="chart" style="width
-    :500px;height:350px;">
-
-        <canvas id="graph" width="400" height="350" style="border:1px solid blue">
-
-        </canvas>
+<section>
+     <div class="chart" style="text-align: center; height:350px;">
+        <canvas id="graph" width="400" height="350" style="border:1px solid gold"></canvas>
     </div>
+</section>
+
     <script
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
@@ -37,3 +38,4 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     <script src="/public/js/data.js"></script>
 </body>
 </html>
+
