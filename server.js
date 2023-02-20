@@ -18,6 +18,7 @@ app.use(express.static("public"));
 app.use("/", routes);
 
 
+
 //TODO: Uncomment to make use of database, once set up
 // sequelize.sync({force: false}).then(()=>{
 //     app.listen(PORT, () => {
@@ -28,3 +29,30 @@ app.use("/", routes);
 app.listen(PORT, () => {
   console.log(`Server is listening at http://localhost:${PORT}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
