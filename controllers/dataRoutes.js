@@ -21,9 +21,6 @@ if(process.env.JAWSDB_URL){
   );
 }
 
-
-
-
 //create new user
 
 router.post('/register', async (req, res) => {
