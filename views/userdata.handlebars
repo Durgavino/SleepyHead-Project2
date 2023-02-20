@@ -1,33 +1,5 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
-    {{!-- <title>Welcome to Sleepyhead</title>
-</head>
-Welcome to Sleepyhead
-<body>
-    <br>
-    <br>
-    <form action="/data/userinput" id="userinput" method="POST">
-       
-        <label for="lname">Bed Time:</label><br>
-        <input type="text" id="BTime" name="BTime" value=""><br>
-
-        <label for="fname"> <br> Wake up Time:</label><br>
-        <input type="text" id="WTime" name="WTime" value=""><br><br>
-        
-        <input type="submit" value="Submit"><br><br>
-      </form>
-      
-</body>
-</html> --}}
-
-
-  <section class="hero">
- 
-<h2>Input Values</h2>
+<section class="hero">
+<h2>Enter Sleep Time</h2>
 <br>
  <form id="userdata" action="/data/userinput" id="userinput" method="POST">
        
@@ -38,6 +10,6 @@ Welcome to Sleepyhead
         <input type="text" id="WTime" name="WTime" value=""><br><br>
         
         <input type="submit" value="Submit"><br><br>
-        
+        <input type="button" id="Submit" onclick=location.href="http://localhost:3001/data/getdata" value="View last 5 days sleep information">
       </form>
 </section>

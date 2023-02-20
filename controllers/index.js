@@ -13,4 +13,5 @@ router.use('/user',userRoutes);//htpp://localhost:3001/user
 
 router.use('/data',dataRoutes);//htpp://localhost:3001/user
 
+
 module.exports = router;

@@ -26,7 +26,7 @@ app.listen(PORT, () => {
   console.log(`Server is listening at http://localhost:${PORT}`);
 });
 
-// http://localhost:3001/data/getdata
+
 
 
 
