@@ -5,12 +5,10 @@ router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
-
 router.get('/index/login', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
   res.render('homepage');
 });
-
 
 router.get('/index', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
