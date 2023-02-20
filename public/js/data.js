@@ -1,4 +1,13 @@
 
+
+// function getdata(){
+
+
+// fetch('/data/getdata').then(res=>{
+//     console.log(res);
+  
+// })
+
 function getdata(){
 
 fetch('/data/getdata').then(res=>{
@@ -10,8 +19,9 @@ fetch('/data/getdata').then(res=>{
     // document.getElementById("sleepdata").innerHTML=html
 })
 
-}
-getdata();
+
+// }
+// getdata();
 
 const registerform=document.querySelector("#register");
 registerform.addEventListener("submit",function(e){

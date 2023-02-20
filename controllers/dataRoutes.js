@@ -56,8 +56,13 @@ router.post('/login', async (req, res) => {
       res.redirect('/login');
     }
     else {
-
-      res.render('userdata');
+console.log(rows);
+if(rows.length){
+  res.render('userdata');
+}
+    else{
+      res.render("login");
+    }
     }
   })
 
@@ -66,7 +71,7 @@ router.post('/login', async (req, res) => {
 //logout
 router.post('/logout', async (req, res) => {
 req.body.destroy();
-res.redirect("index");
+res.render("index");
 });
 
 router.get('/data', async (req, res) => {
@@ -97,11 +102,9 @@ router.post('/userinput', (req, res) => {
 });
 
 router.get('/getdata', (req, res) => {
-  // // const sql = `
-  // select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation `;
-
-  const sql=`
-  select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation order by id limit 5`;
+  //  const sql=`
+  // select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation limit 5`;
+  const sql=`select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation order by id asc `;
 
   db.query(sql, (err, rows) => {
     // if(err){
@@ -123,4 +126,23 @@ router.get('/getdata', (req, res) => {
   });
 });
 
+router.get('/api/getdata', (req, res) => {
+  // // const sql = `
+  // select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation `;
+
+  // const sql=`
+  // select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation`;
+const sql=`select BedTime,wakeUpTime,(-(BedTime-12)+(0+wakeUpTime)) as Sleepdurtion from Usersleepinfomation order by id desc limit 5`;
+
+
+  db.query(sql, (err, rows) => {
+      
+    if (!err) {
+      res.json(rows);
+    }
+    else {
+      throw err;
+    }
+  });
+});
 module.exports = router;
