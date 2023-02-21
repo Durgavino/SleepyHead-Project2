@@ -6,6 +6,8 @@ fetch('/data/api/getdata').then(res=>{
 }).then(res=>{
     console.log(res);
     const graph=document.getElementById('graph');
+    graph.height=100;
+    graph.width=600;
 
     let linegraph= new Chart(graph,{
         type:'line',
