@@ -1,3 +1,5 @@
+// conflict resolved
+
 const router = require('express').Router();
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
@@ -18,8 +20,6 @@ if(process.env.JAWSDB_URL){
     console.log(`Connected to SleepyHead Database`)
   );
 }
-
-
 
 //create new user
 

@@ -1,4 +1,5 @@
 
+
 DROP DATABASE IF EXISTS sleepyhead_db;
 CREATE DATABASE sleepyhead_db;
 
@@ -12,6 +13,7 @@ EmailId VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Usersleepinfomation (
+id INT NOT NULL AUTO_INCREMENT  PRIMARY KEY,
 BedTime TIME NOT NULL,
 wakeUpTime TIME NOT NULL,
 user_id INT,
