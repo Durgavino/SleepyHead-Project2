@@ -21,10 +21,10 @@ fetch('/data/api/getdata').then(res=>{
                 // borderColor:"rgba(87, 75, 144,1.0)",
                 borderColor:"rgba(225, 177, 44,1.0)",
                fill:false,
-              
+               
                // data:[1,8,6,2,1]
                data:res.map(e=>e.Sleepdurtion)
-               
+            
             }]
         }
     });
